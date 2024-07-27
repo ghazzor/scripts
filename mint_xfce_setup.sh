@@ -25,7 +25,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # some xfce stuff
 sudo add-apt-repository ppa:xubuntu-dev/extras
 sudo apt update
-sudo apt install xfce4-docklike-plugin xfce4-clipman-plugin  -y
+sudo apt install xfce4-docklike-plugin xfce4-clipman-plugin -y
 
 # extra packages
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
@@ -37,6 +37,8 @@ sudo nala install sublime-text -y
 packages_to_nuke=(
 "libreoffice*"
 transmission-gtk
+thunderbird
+rhythmbox
 )
 
 for bloat in "${packages_to_nuke[@]}"; do
