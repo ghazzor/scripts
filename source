@@ -1,0 +1,8 @@
+alias c='git cherry-pick'
+alias f='git commit'
+alias s='git status'
+alias n='nano'
+alias r='git revert'
+alias m='micro'
+alias x='git diff'
+alias p='git push origin $(git symbolic-ref --short HEAD)'

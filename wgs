@@ -1,0 +1,18 @@
+#!/bin/bash
+if [[ -z $(lsmod | grep -o wireguard | head -n 1) ]]; then
+sudo modprobe wireguard
+echo "loading wireguard module..."
+fi
+
+if [[ "$1" = "-u" ]]; then
+sudo ifconfig wlo1 down
+sudo wg-quick up "$2"
+sudo ifconfig wlo1 up
+echo "setting up $2.config"
+elif [ "$1" = "-d" ]; then
+sudo wg-quick down "$2"
+echo "disconnecting $2.config"
+else
+echo "Error: invalid option"
+exit
+fi
