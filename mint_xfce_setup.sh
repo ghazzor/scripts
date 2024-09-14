@@ -23,7 +23,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 
 # some xfce stuff
-sudo add-apt-repository ppa:xubuntu-dev/extras
+sudo add-apt-repository ppa:xubuntu-dev/extras -y
 sudo apt update
 sudo apt install xfce4-docklike-plugin xfce4-clipman-plugin -y
 
@@ -44,10 +44,3 @@ rhythmbox
 for bloat in "${packages_to_nuke[@]}"; do
         sudo apt-get remove --purge "$bloat" -y
 done
-
-# dirs
-mkdir -p $HOME/android
-
-# configs
-sudo update-alternatives --config x-cursor-theme #to select default cursor theme systemwide
-xdg-mime default nemo.desktop inode/directory #set nemo as default
