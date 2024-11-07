@@ -8,7 +8,6 @@ chmod 755 wgs
 sudo cp wgs /usr/local/bin/wgs
 sudo chown root:root /usr/local/bin/wgs
 
- 
 shellrc="$HOME/.zshrc"
 shell_rc_lines=(
 'export PATH=$HOME/.bin:$PATH'
@@ -22,6 +21,9 @@ for line in "${shell_rc_lines[@]}"; do
   echo "$line" >> "$shellrc"
 fi
 done
+
+# Disable swap
+sudo sed -i "s/\/swapfile/#\/swapfile/g" /etc/fstab
 
 # configs
 #sudo update-alternatives --config x-cursor-theme #to select default cursor theme systemwide

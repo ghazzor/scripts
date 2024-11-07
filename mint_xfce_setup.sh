@@ -8,7 +8,7 @@ fi
 # basics
 sudo apt update
 sudo apt install nala -y
-sudo nala intall wget curl git neofetch zstd -y
+sudo nala install wget curl git neofetch zstd micro wireguard-tools -y
 
 # install xanmod
 wget -qO - https://dl.xanmod.org/archive.key | sudo gpg --dearmor -vo /usr/share/keyrings/xanmod-archive-keyring.gpg
@@ -19,7 +19,6 @@ sudo nala install linux-xanmod-x64v4 -y
 # some more packages
 sudo nala upgrade -y
 sudo nala install nemo build-essential zsh -y
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
 # some xfce stuff
@@ -42,5 +41,8 @@ rhythmbox
 )
 
 for bloat in "${packages_to_nuke[@]}"; do
-        sudo apt-get remove --purge "$bloat" -y
+   sudo apt-get remove --purge "$bloat" -y
 done
+
+# install oh-,y-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
